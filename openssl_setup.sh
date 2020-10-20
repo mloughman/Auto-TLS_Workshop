@@ -26,7 +26,6 @@ echo 1000 > serial
 echo ""
 echo "Creating openssl.conf file in ${INSTALL_HOME}"
 
-#cat > ${INSTALL_HOME}/openssl.cnf << EOF
 cat << EOF > ${INSTALL_HOME}/openssl.cnf
 # OpenSSL root CA configuration file.
 #
@@ -173,7 +172,6 @@ echo 1000 > serial
 echo ""
 echo "Creating openssl.conf for the Intermediate CA"
 # Create the Intermediate CA configuration file.
-#cat > ${INSTALL_HOME}/intermediate/openssl.cnf << EOF
 cat << EOF > ${INSTALL_HOME}/intermediate/openssl.cnf
 # OpenSSL intermediate CA configuration file.
 [ ca ]
