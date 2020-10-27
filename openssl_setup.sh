@@ -211,8 +211,8 @@ policy            = policy_loose
 # The root CA should only sign intermediate certificates that match.
 # See the POLICY FORMAT section of 'man ca'.
 countryName             = match
-stateOrProvinceName     = match
-organizationName        = match
+stateOrProvinceName     = optional
+organizationName        = optional
 organizationalUnitName  = optional
 commonName              = supplied
 emailAddress            = optional
@@ -354,6 +354,14 @@ openssl ca -config openssl.cnf -extensions v3_intermediate_ca \
 
 chmod 444 intermediate/certs/intermediate.cert.pem
 
+echo ""
+echo "Root Certificate and Key"
+echo " /root/myCA/certs/ca.cert.pem"
+echo " /root/myCA/private/ca.key.pem"
+echo ""
+echo "Intermediate Certificate and Key"
+echo " /root/myCA/intermediate/certs/intermediate.cert.pem"
+echo " /root/myCA/intermediate/private/intermediate.key.pem"
 
 echo " 	DONE "
 
